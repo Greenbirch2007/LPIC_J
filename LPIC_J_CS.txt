@@ -1,0 +1,383 @@
+cd	ホームディレクトリに移動する。【基本コマンド】	
+cd /tmp	/tmpディレクトリに移動する。【基本コマンド】	
+cd -	直前のカレントディレクトリに移動する。【基本コマンド】	
+cd ..	1つ上のディレクトリに移動する。【基本コマンド】	
+pwd	カレントディレクトリを表示する。【基本コマンド】	
+man passwd	passwdコマンドのマニュアルを表示する。【基本コマンド】	
+man 5 passwd	/etc/passwdファイルのマニュアルを表示する。【基本コマンド】	
+apropos ext3	マニュアルの1行説明に「ext3」が含まれるマニュアル一覧を表示する。【基本コマンド】	
+exit	ログアウトする。シェルを終了する。【基本コマンド】	
+date	現在の日時を表示する。【基本コマンド】	
+su	rootユーザーになる（環境は元のまま）。終了はexit。【基本コマンド】	
+su -	rootユーザーになる（環境はrootでのログインと同じ）。【基本コマンド】	
+su - smile	smileユーザーになる（環境はsmileでのログインと同じ）。【基本コマンド】	
+sudo /sbin/shutdown -r now	許可されたユーザーが管理者権限でshutdownコマンドを実行する。【基本コマンド】	
+sudo -s	許可されたユーザーがrootユーザーになる（環境は元のまま）。【基本コマンド】	
+sudo -i	許可されたユーザーがrootユーザーになる（環境はrootでのログインと同じ）。【基本コマンド】	
+whatis passwd	マニュアルのタイトルがpasswdであるマニュアル一覧を表示する。【基本コマンド】	
+whereis passwd	passwdコマンドの実行ファイルとマニュアルのパスを表示する。【基本コマンド】	
+cp httpd.conf httpd.conf.org	httpd.confファイルをhttpd.conf.orgファイルとしてコピーする。【ファイル?ディレクトリ操作コマンド】	
+cp *.txt backup	拡張子が「.txt」のファイルをbackupディレクトリにコピーする。【ファイル?ディレクトリ操作コマンド】	
+cp -r /pub/data .	/pub/dataディレクトリをカレントディレクトリにコピーする。【ファイル?ディレクトリ操作コマンド】	
+ls	カレントディレクトリ内のファイル一覧を表示する。【ファイル?ディレクトリ操作コマンド】	
+ls -l /tmp	/tmpディレクトリのファイル一覧を詳細に表示する。【ファイル?ディレクトリ操作コマンド】	
+ls -A $HOME	「.」で始まる隠しファイルも含めてホームディレクトリ内のファイルを表示する。【ファイル?ディレクトリ操作コマンド】	
+mv before.txt after.txt	before.txtファイルをafter.txtファイルにリネームする。【ファイル?ディレクトリ操作コマンド】	
+mv datafile /tmp	datafileファイルを/tmpディレクトリ以下に移動する。【ファイル?ディレクトリ操作コマンド】	
+mkdir temp	tempディレクトリを作成する。【ファイル?ディレクトリ操作コマンド】	
+mkdir -p dir/sub1	dirディレクトリを作成し、その中にsub1ディレクトリを作成する。【ファイル?ディレクトリ操作コマンド】	
+mkdir -m 701 public_html	パーミッション701でpublic_htmlファイルを作成する。【ファイル?ディレクトリ操作コマンド】	
+ln data data.hd	dataファイルのハードリンクをdata.hdとして作成する。【ファイル?ディレクトリ操作コマンド】	
+ln -s sampledir otherdir	sampledirディレクトリのシンボリックリンクであるotherdirディレクトリを作成する。【ファイル?ディレクトリ操作コマンド】	
+cat /etc/hosts	/etc/hostsファイルの内容を表示する。【ファイル?ディレクトリ操作コマンド】	
+less /etc/services	/etc/servicesファイルをページビューワーで開く。【ファイル?ディレクトリ操作コマンド】	
+locate nginx	「nginx」という名前が含まれるファイルをファイル名データベースから検索する。【ファイル?ディレクトリ操作コマンド】	
+chmod 644 sample	sampleファイルのパーミッションを644に設定する。【ファイル?ディレクトリ操作コマンド】	
+chmod a+x sample	sampleファイルに実行権を追加する。【ファイル?ディレクトリ操作コマンド】	
+chmod -R o-w sampledir	sampledirディレクトリ以下のパーミッションから、その他ユーザーの書き込み権限を削除する。【ファイル?ディレクトリ操作コマンド】	
+chown apache sample.html	sample.htmlファイルの所有者をapacheにする。【ファイル?ディレクトリ操作コマンド】	
+chown apache:apache sample.html	sample.htmlファイルの所有者をapacheに、所有グループをapacheにする。【ファイル?ディレクトリ操作コマンド】	
+chown -R apache html	htmlディレクトリ以下の所有者をapache、所有グループをapacheにする。【ファイル?ディレクトリ操作コマンド】	
+chgrp apache sample.html	sample.htmlファイルの所有グループをapacheにする。【ファイル?ディレクトリ操作コマンド】	
+file sample	sampleファイルの種別を表示する。【ファイル?ディレクトリ操作コマンド】	
+"find -name ""*.txt"""	カレントディレクトリ以下から拡張子が「.txt」のファイルを検索する。【ファイル?ディレクトリ操作コマンド】	
+"find -name ""*.txt"" -mtime +30"	上記に加え、最終更新日が30日以上前である条件で検索する。【ファイル?ディレクトリ操作コマンド】	
+find /tmp -type f -user happy -exec rm {} \;	/tmpディレクトリ内のファイルで所有者がhappyのものを削除する。【ファイル?ディレクトリ操作コマンド】	
+touch sample	サイズが0のsampleファイルを作成する。ファイルが存在すればタイムスタンプを更新する。【ファイル?ディレクトリ操作コマンド】	
+touch -t 201601312345 sample	sampleファイルのタイムスタンプを2016年1月31日23時45分にする。【ファイル?ディレクトリ操作コマンド】	
+jobs	実行中のジョブを表示する。【プロセス?ジョブ管理コマンド】	
+jobs -l	実行中のジョブをPIDとともに表示する。【プロセス?ジョブ管理コマンド】	
+fg %1	ジョブID1番のジョブをフォアグラウンドで実行する。【プロセス?ジョブ管理コマンド】	
+bg %1	ジョブID1番のジョブをバックグラウンドで実行する。【プロセス?ジョブ管理コマンド】	
+kill 20000	PIDが20000のプロセスを終了する。【プロセス?ジョブ管理コマンド】	
+kill -9 20000	PIDが20000のプロセスを強制終了する。【プロセス?ジョブ管理コマンド】	
+kill -l	シグナルを一覧表示する。【プロセス?ジョブ管理コマンド】	
+killall vim	vimプロセスをすべて終了する。【プロセス?ジョブ管理コマンド】	
+killall -HUP named	namedプロセスに設定ファイルを再読込させる。【プロセス?ジョブ管理コマンド】	
+nice -n 10 du -s /pub/*	優先度を下げてduコマンドを実行する。【プロセス?ジョブ管理コマンド】	
+pgrep ssh	プロセス名にsshが含まれるプロセスのPIDを表示する。【プロセス?ジョブ管理コマンド】	
+pgrep -l ssh	プロセス名にsshが含まれるプロセスのPIDとプロセス名を表示する。【プロセス?ジョブ管理コマンド】	
+pgrep -t pts/1	仮想端末pts/1から起動しているプロセスを表示する。【プロセス?ジョブ管理コマンド】	
+ps aux	システム上のすべてのプロセスを表示する。【プロセス?ジョブ管理コマンド】	
+pstree -p	プロセスをツリー状に表示する（PIDも表示する）。【プロセス?ジョブ管理コマンド】	
+top	プロセスとシステム状況をモニタする。【プロセス?ジョブ管理コマンド】	
+gzip sample	"sampleファイルをgzipで圧縮する。【ファイル圧縮展開コマンド
+】"	
+gunzip sample.gz	"sample.gzファイルを解凍する。【ファイル圧縮展開コマンド
+】"	
+bzip2 sample	"sampleファイルをbzip2で圧縮する。【ファイル圧縮展開コマンド
+】"	
+bunzip2 sample.bz2	"sample.bz2ファイルを解凍する。【ファイル圧縮展開コマンド
+】"	
+xz sample	"sampleファイルをxz（7zip）で圧縮する。【ファイル圧縮展開コマンド
+】"	
+xz -d sample.xz	"sample.xzファイルを解凍する。【ファイル圧縮展開コマンド
+】"	
+zip sample.zip sample	"sampleファイルをzipで圧縮する。【ファイル圧縮展開コマンド
+】"	
+unzip sample.zip	"sample.zipファイルを解凍する。【ファイル圧縮展開コマンド
+】"	
+tar czvf home.tar.gz /home	"/homeディレクトリの圧縮アーカイブhome.tar.gzを作成する。【ファイル圧縮展開コマンド
+】"	
+tar xzvf home.tar.gz	"圧縮アーカイブhome.tar.gzを展開する。【ファイル圧縮展開コマンド
+】"	
+tar cjvf home.tar.bz2 /home	"/homeディレクトリの圧縮アーカイブhome.tar.bz2を作成する。【ファイル圧縮展開コマンド
+】"	
+tar xjvf home.tar.bz2	"圧縮アーカイブhome.tar.bz2を展開する。【ファイル圧縮展開コマンド
+】"	
+tar cJvf home.tar.xz /home	"/homeディレクトリの圧縮アーカイブhome.tar.xzを作成する。【ファイル圧縮展開コマンド
+】"	
+tar xJvf home.tar.xz	"圧縮アーカイブhome.tar.xzを展開する。【ファイル圧縮展開コマンド
+】"	
+grep httpd /etc/services	/etc/servicesファイルの中から「httpd」という文字列が含まれる行を抜き出して表示する。【テキスト処理コマンド】	
+head -5 Makefile	Makefileファイルの先頭5行を表示する。【テキスト処理コマンド】	
+tail -20 messages	messagesファイルの末尾20行を表示する。【テキスト処理コマンド】	
+tail -f /var/log/messages	/var/log/messagesファイルの末尾を表示し続ける。【テキスト処理コマンド】	
+head /etc/passwd	/etc/passwdファイルの先頭10行を表示する。【テキスト処理コマンド】	
+head -20 /etc/passwd	/etc/passwdファイルの先頭20行を表示する。【テキスト処理コマンド】	
+tail /etc/passwd	/etc/passwdファイルの末尾10行を表示する。【テキスト処理コマンド】	
+tail -20 /etc/passwd	/etc/passwdファイルの末尾20行を表示する。【テキスト処理コマンド】	
+tail /var/log/messages	/var/log/messagesファイルの末尾を表示し続ける。（ログ監視）【テキスト処理コマンド】	
+rpm -qa | sort	インストール済みパッケージ名をソートして表示する。【テキスト処理コマンド】	
+iconv -f sjis -t utf8 sample.txt	ShiftJISで書かれたsample.txtファイルをUTF-8に変換して出力する。【テキスト処理コマンド】	
+lpr /etc/resolv.conf	/etc/resolv.confを印刷する。【テキスト処理コマンド】	
+wc sample	sampleファイルのバイト数、単語数、行数を表示する。【テキスト処理コマンド】	
+rpm -qa | wc -l	インストール済みパッケージの数を数える。【テキスト処理コマンド】	
+alias	設定済みのエイリアスを表示する。【bashコマンド】	
+alias ll='ls -l'	「ls -l」のエイリアス「ll」を設定する。【bashコマンド】	
+unalias ll	エイリアス「ll」を削除する。【bashコマンド】	
+echo $PATH	変数PATHの内容を表示する。【bashコマンド】	
+"echo ""1"" > /proc/sys/net/ipv4/ip_forward"	/proc/sys/net/ipv4/ip_forwardに「1」を書き込む。【bashコマンド】	
+export PATH	変数PATHを環境変数にする。【bashコマンド】	
+export LANG=C	変数LANGに値「C」を設定して環境変数にする。【bashコマンド】	
+export PATH=$PATH:/opt/bin	変数PATHに「/opt/bin」を追加して環境変数にする。【bashコマンド】	
+printenv	環境変数をすべて表示する。【bashコマンド】	
+set	シェル変数と環境変数を表示する。【bashコマンド】	
+type echo	echoが外部コマンドか組み込みコマンドか、エイリアスか関数かを調べる。【bashコマンド】	
+history	コマンド履歴を表示する。【bashコマンド】	
+history -c	コマンド履歴を削除する。【bashコマンド】	
+ps aux > ps.log	psコマンドの実行結果をps.logに保存する。【bashコマンド】	
+ps aux >> ps.log	psコマンドの実行結果をps.logに追記する。【bashコマンド】	
+ps aux | tee ps.log	psコマンドの実行結果をps.logに保存するとともに画面上に表示する。【bashコマンド】	
+telnet host.example.com	"host.example.comにtelnetで接続する。【ネットワークコマンド
+】"	
+telnet host.example.com 80	"host.example.comの80番ポートに接続する。【ネットワークコマンド
+】"	
+ssh host.example.com	"host.example.comにSSHで接続する。【ネットワークコマンド
+】"	
+ssh reika@host.example.com	"host.example.comにreikaユーザーとしてSSHで接続する。【ネットワークコマンド
+】"	
+ssh -p 10022 host.example.com	"host.example.comの10022番ポートにSSHで接続する。【ネットワークコマンド
+】"	
+ssh-keygen -t dsa	"SSHの鍵ペアをDSAで作成する。【ネットワークコマンド
+】"	
+ssh-keygen -p	"SSHのパスフレーズを変更する。【ネットワークコマンド
+】"	
+ssh-keygen -l -t dsa	"DSA鍵のフィンガープリントを表示する。【ネットワークコマンド
+】"	
+lftp host.example.com	"host.example.comにFTPで接続する。【ネットワークコマンド
+】"	
+mail happy@example.com	"happy@example.com宛のメールを作成する。【ネットワークコマンド
+】"	
+df -h | mail -s diskuse admin@example.com	"dfコマンドの実行結果を、admin@example.com宛にタイトル「diskuse」でメール送信する。【ネットワークコマンド
+】"	
+scp sample host.example.com:	"sampleファイルをhost.example.comのホームディレクトリ内にリモートコピーする。【ネットワークコマンド
+】"	
+scp happy@host.example.com:/tmp/sample .	"happyユーザーとしてhost.example.comに接続し、/tmp/sampleファイルをローカルディレクトリにリモートコピーする。【ネットワークコマンド
+】"	
+ssh-agent bash	"ssh-agentでbashを利用する。【ネットワークコマンド
+】"	
+ssh-add	"ssh-agentで利用する秘密鍵のパスフレーズを入力する。【ネットワークコマンド
+】"	
+wget http://www.example.com/sample	"http://www.example.com/sampleファイルをダウンロードする。【ネットワークコマンド
+】"	
+wget -r http://www.example.com/main	"http://www.example.com/mainディレクトリ以下をダウンロードする。【ネットワークコマンド
+】"	
+dig www.example.com	"www.example.comのIPアドレスをDNSサーバに問い合せる。【ネットワーク管理コマンド
+】"	
+dig -x 192.168.1.30	"192.168.1.30に対応するホスト名をDNSサーバに問い合せる。【ネットワーク管理コマンド
+】"	
+dig example.com mx	"example.comドメインのメールサーバ（MXレコード）を調べる。【ネットワーク管理コマンド
+】"	
+host www.example.com	"www.example.comのIPアドレスをDNSサーバに問い合せる。【ネットワーク管理コマンド
+】"	
+host 192.168.1.30	"192.168.1.30に対応するホスト名をDNSサーバに問い合せる。【ネットワーク管理コマンド
+】"	
+host -t mx example.com	"example.comドメインのメールサーバ（MXレコード）を調べる。【ネットワーク管理コマンド
+】"	
+ip addr show	"IPアドレスなどネットワークインターフェースの情報を表示する。【ネットワーク管理コマンド
+】"	
+ip addr add 192.168.1.30/24 dev eth1	"ネットワークインターフェースeth1に192.168.1.30/24を割り当てる。【ネットワーク管理コマンド
+】"	
+ip link set eth1 up	"ネットワークインターフェースeth1を有効にする。【ネットワーク管理コマンド
+】"	
+ip link set eth1 down	"ネットワークインターフェースeth1を無効にする。【ネットワーク管理コマンド
+】"	
+ss -at	"開いているTCPポートを表示する。【ネットワーク管理コマンド
+】"	
+ss -atun	"開いているTCP/UDPポートを、名前解決せず表示する。【ネットワーク管理コマンド
+】"	
+ss -atp	"開いているTCPポートとプロセス名を表示する。【ネットワーク管理コマンド
+】"	
+ntpdate pool.ntp.org	"NTPを使ってシステムクロックを正確に合わせる。【ネットワーク管理コマンド
+】"	
+ntpq -p	"NTPの問い合せ状況を確認する。【ネットワーク管理コマンド
+】"	
+ping host.example.com	"host.example.comの疎通確認をする。終了はCtrl+C。【ネットワーク管理コマンド
+】"	
+ping -c 4 host.example.com	"host.example.comの疎通確認をする。ICMPパケットを4回送ったら終了する。【ネットワーク管理コマンド
+】"	
+ip route show	"ルーティングテーブルを表示する。【ネットワーク管理コマンド
+】"	
+ip route add default via 192.168.11.1	"ルーティングテーブルにデフォルトゲートウェイを追加する。【ネットワーク管理コマンド
+】"	
+traceroute host.example.com	"host.example.comまでに通過するルータを表示する。【ネットワーク管理コマンド
+】"	
+iptables -L	"パケットフィルタリングの設定を表示する（IPv4）。【ネットワーク管理コマンド
+】"	
+ip6tables -L	"パケットフィルタリングの設定を表示する（IPv6）。【ネットワーク管理コマンド
+】"	
+at 23:15	"23時15分に実行するジョブを予約する。【システム管理コマンド
+】"	
+at 4:30 tomorrow	"明日の4時半に実行するジョブを予約する。【システム管理コマンド
+】"	
+crontab -e	"スケジュールを登録する。【システム管理コマンド
+】"	
+crontab -l	"登録済みのスケジュールを表示する。【システム管理コマンド
+】"	
+crontab -r	"登録済みのスケジュールをすべて削除する。【システム管理コマンド
+】"	
+systemctl list-unit-files --type=service	"サービスの自動起動設定を表示する。【システム管理コマンド
+】"	
+systemctl enable httpd	"システム起動時にhttpdサービスを自動的に起動する。【システム管理コマンド
+】"	
+systemctl disable httpd	"システム起動時にhttpdサービスを自動的に起動しないようにする。【システム管理コマンド
+】"	
+systemctl start httpd	"httpdサービス（Apache）を起動する。【システム管理コマンド
+】"	
+systemctl restart httpd	"httpdサービス（Apache）を再起動する。【システム管理コマンド
+】"	
+systemctl is-active httpd	"httpdサービス（Apache）の状態を確認する。【システム管理コマンド
+】"	
+systemctl stop httpd	"httpdサービス（Apache）を終了する。【システム管理コマンド
+】"	
+date 012308302016	"システムクロックを2016年1月23日8時30分にセットする。【システム管理コマンド
+】"	
+lsmod	"ロードされているカーネルモジュールを表示する。【システム管理コマンド
+】"	
+lsof /var/log/messages	"/var/log/messagesファイルを開いているプロセスを表示する。【システム管理コマンド
+】"	
+lsof -c rsyslogd	"rsyslogdプロセスが開いているファイルを表示する。【システム管理コマンド
+】"	
+lsof -i:631	"631番ポートを開いているプロセスを表示する。【システム管理コマンド
+】"	
+modinfo sr_mod	"sr_modカーネルモジュールの情報を表示する。【システム管理コマンド
+】"	
+modprobe sr_mod	"sr_modモジュールをロードする。【システム管理コマンド
+】"	
+modprobe -r sr_mod	"sr_modモジュールをアンロードする。【システム管理コマンド
+】"	
+shutdown -r now	"ただちにシステムを再起動する。【システム管理コマンド
+】"	
+shutdown -h +10	"10分後にシステムをシャットダウンする。【システム管理コマンド
+】"	
+shutdown -r 23:00	"23時にシステムを再起動する。【システム管理コマンド
+】"	
+shutdown -c	"シャットダウンの予定をキャンセルする。【システム管理コマンド
+】"	
+uname -a	"システム情報を表示する。【システム管理コマンド
+】"	
+updatedb	"locateコマンド用のファイル名データベースを更新する。【システム管理コマンド
+】"	
+hostname	"ホスト名を表示する。【システム管理コマンド
+】"	
+lspci	"PCIデバイスの情報を表示する。【システム管理コマンド
+】"	
+lsusb	"USBデバイスの情報を表示する。【システム管理コマンド
+】"	
+dmesg	"カーネルの出力メッセージを表示する。（起動メッセージなど）【システム管理コマンド
+】"	
+ldd /bin/zsh	"/bin/zshの実行に必要な共有ライブラリを表示する。【システム管理コマンド
+】"	
+free -m	"メモリの使用状況をMバイト単位で表示する。【システム管理コマンド
+】"	
+hwclock --show	"ハードウェアクロックを表示する。【システム管理コマンド
+】"	
+hwclock --systohc	"システムクロックをハードウェアクロックに書き込む。【システム管理コマンド
+】"	
+hwclock --hctosys	"ハードウェアクロックをシステムクロックに書き込む。【システム管理コマンド
+】"	
+id	"自分のUID、プライマリグループ、所属グループを表示する。【ユーザー管理コマンド
+】"	
+id madoka	"madokaユーザーのUID、プライマリグループ、所属グループを表示する。【ユーザー管理コマンド
+】"	
+groups	"所属しているグループを表示する。【ユーザー管理コマンド
+】"	
+last	"過去のログイン?ログアウト履歴を表示する。【ユーザー管理コマンド
+】"	
+last sayaka	"sayakaユーザーのログイン?ログアウト履歴を表示する。【ユーザー管理コマンド
+】"	
+lastlog	"ユーザーごとの最終ログイン日時を一覧表示する。【ユーザー管理コマンド
+】"	
+lastlog -t 7	"最近7日以内の最終ログイン日時を表示する。【ユーザー管理コマンド
+】"	
+users	"ログイン中のユーザーを表示する。【ユーザー管理コマンド
+】"	
+useradd yayoi	"yayoiユーザーを追加する。【ユーザー管理コマンド
+】"	
+useradd -s /sbin/nologin apache	"ログイン不可のユーザーapacheを作成する。【ユーザー管理コマンド
+】"	
+userdel joker	"jokerユーザーを削除する。【ユーザー管理コマンド
+】"	
+userdel -r joker	"jokerユーザーをホームディレクトリごと削除する。【ユーザー管理コマンド
+】"	
+groupadd develop	"developグループを追加する。【ユーザー管理コマンド
+】"	
+groupdel develop	"developグループを削除する。【ユーザー管理コマンド
+】"	
+passwd	"自身のパスワードを変更する。【ユーザー管理コマンド
+】"	
+passwd akane	"akaneユーザーのパスワードを設定する。【ユーザー管理コマンド
+】"	
+chage reika	"reikaユーザーのパスワード期限などを変更する。【ユーザー管理コマンド
+】"	
+visudo	"sudoコマンドを扱えるユーザーを管理する。【ユーザー管理コマンド
+】"	
+w	"ログイン中のユーザーとユーザーが実行しているコマンドを表示する。【ユーザー管理コマンド
+】"	
+who	"現在ログインしているユーザーを表示する。【ユーザー管理コマンド
+】"	
+df	"ファイルシステムごとのディスク使用量を表示する。【ファイルシステム管理コマンド
+】"	
+df -H	"見やすい単位で表示する（1G=1000MiB）【ファイルシステム管理コマンド
+】"	
+df -h	"見やすい単位で表示する（1G=1024MB）【ファイルシステム管理コマンド
+】"	
+df -i	"容量ではなくiノードの使用状況を表示する。【ファイルシステム管理コマンド
+】"	
+du -c $HOME	"ホームディレクトリ以下の各ディレクトリの容量および合計を表示する。【ファイルシステム管理コマンド
+】"	
+du -m ~/src	"~/srcディレクトリ内のファイルし容量をMB単位で表示する。【ファイルシステム管理コマンド
+】"	
+du -s /*	"/ディレクトリ直下の各ディレクトリのファイル使用量を表示する。【ファイルシステム管理コマンド
+】"	
+eject	"デフォルトの光学ドライブをイジェクトする。【ファイルシステム管理コマンド
+】"	
+eject /media/cdrom	"/media/cdromをイジェクトする。【ファイルシステム管理コマンド
+】"	
+eject -t	"光学ドライブのトレイを収納する。【ファイルシステム管理コマンド
+】"	
+fsck -y /dev/sda1	"/dev/sda1のファイルシステムをチェックし、自動的に修復する。【ファイルシステム管理コマンド
+】"	
+mke2fs -t ext4 /dev/sda5	"/dev/sda5にext4ファイルシステムを作成する。【ファイルシステム管理コマンド
+】"	
+mount	"マウントされているファイルシステムを表示する。【ファイルシステム管理コマンド
+】"	
+mount /dev/sda5 /home	"/dev/sda5を/homeディレクトリとしてマウントする。【ファイルシステム管理コマンド
+】"	
+mount -o loop cdrom.iso /mnt/cdrom	"cdrom.isoイメージファイルを/mnt/cdromにマウントする。【ファイルシステム管理コマンド
+】"	
+umount /media/cdrom	"/media/cdromをアンマウントする。【ファイルシステム管理コマンド
+】"	
+rpm -qa	"インストール済みの全パッケージ名を表示する。【パッケージ管理コマンド
+】"	
+rpm -q httpd	"httpdパッケージがインストールされているか確認する。【パッケージ管理コマンド
+】"	
+rpm -qi httpd	"httpdパッケージの情報を表示する。【パッケージ管理コマンド
+】"	
+rpm -ql httpd	"httpdパッケージからインストールされたファイルを表示する。【パッケージ管理コマンド
+】"	
+rpm -qlp httpd-2.4.6-45.el7.centos.x86_64.rpm	"httpdパッケージからインストールされるファイルを表示する。【パッケージ管理コマンド
+】"	
+rpm -qc httpd	"httpdパッケージからインストールされた設定ファイルを表示する。【パッケージ管理コマンド
+】"	
+rpm -qd httpd	"httpdパッケージからインストールされたドキュメントを表示する。【パッケージ管理コマンド
+】"	
+rpm -ivh httpd-2.4.6-45.el7.centos.x86_64.rpm	"httpdパッケージをインストールする。【パッケージ管理コマンド
+】"	
+rpm -Fvh httpd-2.4.6-45.el7.centos.x86_64.rpm	"httpdパッケージをアップデートする。【パッケージ管理コマンド
+】"	
+rpm -e httpd	"httpdパッケージをアンインストールする。【パッケージ管理コマンド
+】"	
+yum info nginx	"nginxパッケージの情報を表示する。【パッケージ管理コマンド
+】"	
+yum search nginx	"パッケージ名に「nginx」が含まれるパッケージをリポジトリから検索する。【パッケージ管理コマンド
+】"	
+yum check-update	"アップデート可能なパッケージをリストアップする。【パッケージ管理コマンド
+】"	
+yum update	"すべてのパッケージをアップデートする。【パッケージ管理コマンド
+】"	
+yum update httpd	"httpdパッケージをアップデートする。【パッケージ管理コマンド
+】"	
+yum install httpd	"httpdパッケージをインストールする。【パッケージ管理コマンド
+】"	
+yum remove httpd	"httpdパッケージをアンインストールする。【パッケージ管理コマンド
+】"	
+yum list	"リポジトリ上のすべてのパッケージをリスト表示する。【パッケージ管理コマンド
+】"	
+yum grouplist	"パッケージグループをリスト表示する。【パッケージ管理コマンド
+】"	
+"yum groupinstall ""GNOME Desktop Environment"""	"「GNOME Desktop Environment」パッケージグループをインストールする。【パッケージ管理コマンド
+】"	
+yumdownloader httpd	"httpdパッケージをダウンロードする。【パッケージ管理コマンド
+】"	
